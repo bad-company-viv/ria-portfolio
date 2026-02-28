@@ -1,0 +1,1897 @@
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(253, 248, 242, 0.35);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  transition: background 0.4s var(--ease-float), box-shadow 0.4s;
+}
+
+.navbar.scrolled {
+  background: rgba(253, 248, 242, 0.85);
+  box-shadow: 0 4px 32px rgba(180, 140, 100, 0.08);
+  border-bottom: 1px solid rgba(200, 146, 122, 0.15);
+}
+
+.navInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px clamp(24px, 10vw, 160px);
+}
+
+.navLogo {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--midnight-blue);
+}
+
+.navLinks {
+  display: flex;
+  list-style: none;
+  gap: 36px;
+  align-items: center;
+}
+
+.navLinks a {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--midnight-blue);
+  text-transform: uppercase;
+  transition: color 0.3s;
+  position: relative;
+}
+
+.navLinks a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--rose-gold), var(--lavender-deep));
+  transition: width 0.3s var(--ease-float);
+}
+
+.navLinks a:hover {
+  color: var(--text-primary);
+}
+
+.navLinks a:hover::after {
+  width: 100%;
+}
+
+.navCta {
+  background: linear-gradient(135deg, rgba(200, 146, 122, 0.15), rgba(176, 160, 204, 0.15)) !important;
+  border: 1px solid rgba(200, 146, 122, 0.3) !important;
+  padding: 8px 20px !important;
+  border-radius: 100px;
+  font-weight: 600;
+  color: var(--midnight-blue) !important;
+  backdrop-filter: blur(10px);
+}
+
+.navCta:hover {
+  background: linear-gradient(135deg, rgba(200, 146, 122, 0.25), rgba(176, 160, 204, 0.25)) !important;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--text-secondary);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.mobileMenu {
+  display: flex;
+  flex-direction: column;
+  background: rgba(253, 248, 242, 0.97);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(200, 146, 122, 0.1);
+  padding: 0 40px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s var(--ease-float), padding 0.4s;
+}
+
+.mobileMenu.open {
+  max-height: 360px;
+  padding: 16px 40px 24px;
+}
+
+.mobileMenu a {
+  font-size: 15px;
+  color: var(--text-secondary);
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(200, 146, 122, 0.08);
+  transition: color 0.3s;
+}
+
+.mobileMenu a:hover {
+  color: var(--rose-gold);
+}
+
+/* ---- Hero ---- */
+.heroSection {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: radial-gradient(ellipse 120% 100% at 50% 0%,
+      #f9ece0 0%, #f5e6d3 20%, #f2ddd2 40%, #eedcf0 70%, #e8dff5 90%, #f0eaf8 100%);
+  z-index: 1;
+}
+
+.particleCanvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(60px);
+  animation: orbFloat linear infinite;
+}
+
+.orb1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(232, 180, 160, 0.35)0%, transparent 70%);
+  top: -150px;
+  left: -100px;
+  animation-duration: 20s;
+}
+
+.orb2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(216, 207, 232, 0.4)0%, transparent 70%);
+  top: 20%;
+  right: -80px;
+  animation-duration: 25s;
+  animation-delay: -8s;
+}
+
+.orb3 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(201, 169, 110, 0.3)0%, transparent 70%);
+  bottom: 10%;
+  left: 10%;
+  animation-duration: 18s;
+  animation-delay: -12s;
+}
+
+.orb4 {
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(245, 223, 214, 0.45)0%, transparent 70%);
+  bottom: -80px;
+  right: 15%;
+  animation-duration: 22s;
+  animation-delay: -5s;
+}
+
+.ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid;
+  pointer-events: none;
+  top: 50%;
+  left: 50%;
+}
+
+.ring1 {
+  width: 600px;
+  height: 600px;
+  border-color: rgba(200, 146, 122, 0.12);
+  animation: ringRotate 40s linear infinite;
+}
+
+.ring2 {
+  width: 400px;
+  height: 400px;
+  border-color: rgba(176, 160, 204, 0.15);
+  animation: ringRotate 30s linear infinite reverse;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 24px;
+  max-width: 820px;
+}
+
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(253, 248, 242, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(200, 146, 122, 0.25);
+  border-radius: 100px;
+  padding: 8px 20px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--rose-gold);
+  margin-bottom: 32px;
+  opacity: 0;
+}
+
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--rose-gold);
+  animation: badgePulse 2s ease-in-out infinite;
+}
+
+.heroSalutation {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(20px, 3vw, 32px);
+  color: var(--text-muted);
+  display: block;
+  font-weight: 300;
+  margin-bottom: 12px;
+}
+
+.heroName {
+  font-family: var(--font-serif);
+  font-size: clamp(52px, 8vw, 100px);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin-bottom: 28px;
+  opacity: 0;
+}
+
+.nameRia {
+  display: block;
+  background: linear-gradient(135deg, #3a2a4a, #6a4a5e, #9a6a7e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  padding-bottom: 0.1em;
+  margin-bottom: -0.1em;
+}
+
+.nameGupta {
+  display: block;
+  font-style: italic;
+  background: linear-gradient(135deg, var(--rose-gold), var(--gold-soft), var(--champagne-warm));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  /* Prevent italic descenders (like 'p') from being clipped by the bounding block */
+  padding-bottom: 0.25em;
+  margin-bottom: -0.25em;
+  padding-right: 0.1em;
+  margin-right: -0.1em;
+}
+
+.heroRoles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: clamp(11px, 1.4vw, 14px);
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 28px;
+  opacity: 0;
+}
+
+.roleDivider {
+  color: rgba(200, 146, 122, 0.5);
+}
+
+.heroTagline {
+  font-family: var(--font-serif);
+  font-size: clamp(18px, 2.8vw, 28px);
+  font-weight: 400;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 52px;
+  opacity: 0;
+}
+
+.heroTagline em {
+  font-style: italic;
+  background: linear-gradient(135deg, var(--rose-gold), var(--gold-soft));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroCta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  opacity: 0;
+}
+
+.btnGlass {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 36px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s var(--ease-spring), box-shadow 0.3s;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+
+.btnPrimary {
+  background: linear-gradient(135deg, rgba(200, 146, 122, 0.25), rgba(201, 169, 110, 0.2));
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(200, 146, 122, 0.4) !important;
+  color: #5a3328;
+  box-shadow: 0 8px 32px rgba(200, 146, 122, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  animation: buttonFloat 3s ease-in-out infinite;
+}
+
+.btnSecondary {
+  background: linear-gradient(135deg, rgba(216, 207, 232, 0.25), rgba(176, 160, 204, 0.2));
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(176, 160, 204, 0.4) !important;
+  color: #3a2f55;
+  box-shadow: 0 8px 32px rgba(176, 160, 204, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  animation: buttonFloat 3s ease-in-out infinite;
+  animation-delay: -1.5s;
+}
+
+.btnGlass:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(200, 146, 122, 0.3);
+}
+
+.btnIcon {
+  font-size: 16px;
+}
+
+.btnGlowInner {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), transparent);
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.scrollIndicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  z-index: 3;
+  opacity: 0;
+}
+
+.scrollLine {
+  width: 1px;
+  height: 50px;
+  background: linear-gradient(to bottom, var(--rose-gold), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+.scrollIndicator span {
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ---- Story ---- */
+.storySection {
+  position: relative;
+  z-index: 1;
+  padding: var(--section-pad-v) var(--section-pad-h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(180deg,
+      rgba(247, 240, 232, 0) 0%, rgba(248, 240, 235, 0.9) 15%,
+      rgba(250, 243, 238, 1) 50%, rgba(245, 237, 250, 0.95) 80%,
+      rgba(240, 234, 248, 0.6) 100%);
+}
+
+.storyFloatBg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 70% 50%, rgba(216, 207, 232, 0.25)0%, transparent 70%);
+  pointer-events: none;
+}
+
+.storyContainer {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+  width: 100%;
+}
+
+.storyLabel {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--rose-gold);
+  margin-bottom: 20px;
+}
+
+.storyHeading {
+  font-family: var(--font-serif);
+  font-size: clamp(48px, 7vw, 88px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 48px;
+}
+
+.storyHeading em {
+  font-style: italic;
+  background: linear-gradient(135deg, var(--rose-gold), var(--gold-soft));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.storyBody {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.storyPara {
+  font-size: 17px;
+  line-height: 1.85;
+  color: var(--text-secondary);
+  font-weight: 300;
+}
+
+.storyPara strong {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.storySignature {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 52px;
+}
+
+.sigLine {
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--rose-gold), var(--gold-soft));
+}
+
+.storySignature span {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 18px;
+  color: var(--text-muted);
+}
+
+.storyOrb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(80px);
+}
+
+.storyOrbLeft {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(200, 146, 122, 0.15)0%, transparent 70%);
+  top: 20%;
+  left: -80px;
+  animation: orbFloat 18s ease-in-out infinite;
+}
+
+.storyOrbRight {
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(176, 160, 204, 0.2)0%, transparent 70%);
+  bottom: 10%;
+  right: -60px;
+  animation: orbFloat 22s ease-in-out infinite reverse;
+}
+
+/* ---- Metrics ---- */
+.metricsSection {
+  position: relative;
+  z-index: 1;
+  padding: var(--section-pad-v) var(--section-pad-h);
+  text-align: center;
+  overflow: hidden;
+  background: linear-gradient(180deg,
+      rgba(240, 234, 248, 0.6) 0%, rgba(245, 237, 250, 0.8) 30%,
+      rgba(248, 240, 245, 0.9) 70%, rgba(250, 243, 240, 0.7) 100%);
+}
+
+.metricsLabel {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--lavender-deep);
+  margin-bottom: 16px;
+}
+
+.metricsHeading {
+  font-family: var(--font-serif);
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: 400;
+  text-align: center;
+  color: var(--text-primary);
+  margin-bottom: 56px;
+  letter-spacing: -0.02em;
+}
+
+.metricsLayout {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  align-items: stretch;
+  gap: 64px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  perspective: 1200px;
+}
+
+.metricCard {
+  cursor: pointer;
+  display: flex;
+  height: 100%;
+}
+
+.cardInner {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 44px 28px;
+  border-radius: 24px;
+  background: rgba(253, 248, 242, 0.2);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 32px rgba(180, 140, 110, 0.1), 0 2px 8px rgba(200, 146, 122, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+  transition: box-shadow 0.4s;
+}
+
+.metricCard:hover .cardInner {
+  box-shadow: 0 30px 60px rgba(180, 140, 110, 0.2), 0 8px 24px rgba(200, 146, 122, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.cardGlowBorder {
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(200, 146, 122, 0.5), rgba(216, 207, 232, 0.4), rgba(201, 169, 110, 0.4), rgba(200, 146, 122, 0.3));
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.metricCard:hover .cardGlowBorder {
+  opacity: 1;
+}
+
+.cardNumber {
+  font-family: var(--font-serif);
+  font-size: clamp(40px, 4.5vw, 56px);
+  font-weight: 400;
+  background: linear-gradient(135deg, var(--rose-gold), var(--gold-soft), var(--lavender-deep));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums lining-nums;
+  /* Prevent background-clip from slicing off edge glyphs like 'S' or '+' */
+  padding: 0.1em;
+  margin: -0.1em auto 10px;
+  display: inline-block;
+}
+
+.cardPlus {
+  font-size: 0.6em;
+  vertical-align: super;
+}
+
+.cardTitle {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.cardSub {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--rose-gold);
+  margin-bottom: 14px;
+}
+
+.cardDesc {
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--text-muted);
+  font-weight: 300;
+}
+
+.cardShimmer {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(115deg, transparent 40%, rgba(255, 255, 255, 0.08) 50%, transparent 60%);
+  transform: translateX(-100%);
+  transition: transform 0.6s var(--ease-float);
+  pointer-events: none;
+}
+
+.metricCard:hover .cardShimmer {
+  transform: translateX(100%);
+}
+
+/* ---- Music ---- */
+.musicSection {
+  position: relative;
+  z-index: 1;
+  padding: 0;
+  overflow: hidden;
+  background: linear-gradient(180deg,
+      rgba(250, 243, 240, 0.8) 0%,
+      #1a1030 8%,
+      #150e26 40%,
+      #120c22 70%,
+      #1a1230 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.musicBgOverlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 55% at 70% 50%, rgba(130, 60, 110, 0.22) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 35% at 20% 80%, rgba(90, 60, 140, 0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 45% 30% at 85% 15%, rgba(200, 130, 70, 0.12) 0%, transparent 55%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Waveform — thin decorative strip along top */
+.waveformStrip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  opacity: 0.22;
+  pointer-events: none;
+  z-index: 0;
+}
+
+#waveformCanvas {
+  width: 100%;
+  height: 100%;
+}
+
+/* Two-column grid */
+.musicGrid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(400px, 45%) 1fr;
+  min-height: 100vh;
+  gap: 0;
+}
+
+/* LEFT column — full-height photo */
+.musicImgCol {
+  position: relative;
+  display: flex;
+}
+
+.musicImgFrame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  /* Mask image to perfectly fade out the right side into the background */
+  mask-image: linear-gradient(to right, black 65%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, black 65%, transparent 100%);
+}
+
+.musicImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top 30%;
+  display: block;
+  filter: saturate(1.08) contrast(1.06) brightness(0.88);
+  transition: transform 0.7s var(--ease-float);
+}
+
+.musicImgFrame:hover .musicImg {
+  transform: scale(1.04);
+}
+
+/* Right-side gradient fade — blends into dark section */
+.musicImgGradient {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to right, transparent 65%, #150e26 100%),
+    linear-gradient(to bottom, transparent 60%, rgba(18, 12, 34, 0.4) 100%);
+  pointer-events: none;
+}
+
+/* Soft purple neon ring around the image */
+.musicImgRing {
+  position: absolute;
+  inset: -2px;
+  border-radius: 0;
+  box-shadow: inset 0 0 80px rgba(160, 80, 200, 0.18);
+  pointer-events: none;
+}
+
+.musicImgTag {
+  position: absolute;
+  bottom: 80px;
+  left: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: rgba(18, 10, 30, 0.72);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(200, 146, 122, 0.35);
+  border-radius: 100px;
+  padding: 9px 18px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: rgba(232, 180, 160, 0.95);
+}
+
+.tagDot {
+  color: rgba(200, 80, 80, 0.9);
+  font-size: 8px;
+  animation: badgePulse 2s ease-in-out infinite;
+}
+
+/* RIGHT column — text content */
+.musicTextCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 40px 80px 40px;
+  gap: 0;
+}
+
+.musicLabel {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(200, 146, 122, 0.65);
+  margin-bottom: 20px;
+}
+
+.musicHeading {
+  font-family: var(--font-serif);
+  font-size: clamp(44px, 5.5vw, 80px);
+  font-weight: 400;
+  color: rgba(253, 248, 242, 0.96);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin-bottom: 28px;
+}
+
+.musicHeading em {
+  font-style: italic;
+  background: linear-gradient(135deg, #e8b08c, #d4a870, #c89060);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.musicDesc {
+  font-size: 16px;
+  line-height: 1.85;
+  color: rgba(200, 190, 220, 0.65);
+  font-weight: 300;
+  max-width: 440px;
+  margin-bottom: 36px;
+}
+
+/* Divider */
+.musicDivider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.divLine {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(200, 146, 122, 0.3), transparent);
+  max-width: 80px;
+}
+
+.divIcon {
+  font-size: 12px;
+  color: rgba(200, 146, 122, 0.45);
+  letter-spacing: 0.1em;
+}
+
+/* YouTube card link */
+.musicYtCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 24px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  transition: background 0.3s, border-color 0.3s, transform 0.3s var(--ease-spring), box-shadow 0.3s;
+  cursor: pointer;
+  margin-bottom: 36px;
+  max-width: 440px;
+  text-decoration: none;
+}
+
+.musicYtCard:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(200, 146, 122, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(20, 10, 40, 0.4);
+}
+
+.ytCardLeft {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.ytIconWrap {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(255, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 0, 0, 0.2);
+}
+
+.ytCardInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ytCardHandle {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(253, 248, 242, 0.9);
+  letter-spacing: 0.02em;
+}
+
+.ytCardSub {
+  font-size: 11px;
+  font-weight: 400;
+  color: rgba(200, 190, 220, 0.5);
+  letter-spacing: 0.06em;
+}
+
+.ytCardArrow {
+  font-size: 18px;
+  color: rgba(200, 146, 122, 0.6);
+  transition: transform 0.3s;
+}
+
+.musicYtCard:hover .ytCardArrow {
+  transform: translateX(4px);
+}
+
+/* Stats row */
+.musicStats {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 44px;
+  max-width: 360px;
+}
+
+.musicStat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.statNum {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 400;
+  background: linear-gradient(135deg, var(--rose-gold), var(--gold-soft));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  font-variant-numeric: tabular-nums lining-nums;
+  padding: 0.1em;
+  margin: -0.1em;
+  display: inline-block;
+}
+
+.statLab {
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(200, 190, 220, 0.45);
+}
+
+.musicStatDivider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 0 24px;
+}
+
+/* CTA button */
+.btnMusicCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 44px;
+  border-radius: 100px;
+  border: 1px solid rgba(200, 146, 122, 0.35);
+  background: linear-gradient(135deg, rgba(200, 146, 122, 0.14), rgba(201, 169, 110, 0.08));
+  backdrop-filter: blur(10px);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  color: rgba(232, 180, 160, 0.9);
+  align-self: flex-start;
+  transition: transform 0.3s var(--ease-spring), box-shadow 0.3s, border-color 0.3s;
+  text-decoration: none;
+}
+
+.btnMusicCta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 50px rgba(200, 100, 80, 0.22);
+  border-color: rgba(200, 146, 122, 0.55);
+  color: #fdf8f2;
+}
+
+.btnArrow {
+  font-size: 18px;
+  transition: transform 0.3s;
+}
+
+.btnMusicCta:hover .btnArrow {
+  transform: translateX(5px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .musicGrid {
+    grid-template-columns: 360px 1fr;
+  }
+
+  .musicTextCol {
+    padding: 60px 48px 60px 44px;
+  }
+}
+
+@media (max-width: 800px) {
+  .musicGrid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 360px auto;
+  }
+
+  .musicImgFrame {
+    min-height: 360px;
+  }
+
+  .musicTextCol {
+    padding: 48px 28px 64px;
+  }
+
+  .musicDesc,
+  .musicYtCard,
+  .musicStats {
+    max-width: 100%;
+  }
+}
+
+/* ---- Philosophy ---- */
+.philosophySection {
+  position: relative;
+  z-index: 1;
+  padding: calc(var(--section-pad-v)*1.4) var(--section-pad-h);
+  overflow: hidden;
+  background: linear-gradient(180deg, #1e1538 0%, #221640 20%, #f5edf8 35%, #f8f0f5 60%, #fdf4f0 100%);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.philosophyBg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 100% 60% at 50% 60%, rgba(232, 207, 240, 0.4)0%, transparent 70%);
+  pointer-events: none;
+}
+
+.philosophyContent {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+}
+
+.philosophyLabel {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--lavender-deep);
+  margin-bottom: 40px;
+}
+
+.philosophyQuote {
+  font-family: var(--font-serif);
+  font-size: clamp(32px, 5.5vw, 72px);
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 64px;
+}
+
+.philosophyQuote p {
+  margin: 0;
+}
+
+.philosophyQuote em {
+  font-style: italic;
+  background: linear-gradient(135deg, var(--rose-gold), var(--gold-soft));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.philosophyWords {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-family: var(--font-serif);
+  font-size: clamp(16px, 2.5vw, 24px);
+  color: var(--text-muted);
+}
+
+.philWord {
+  cursor: default;
+  transition: all 0.4s var(--ease-spring);
+  position: relative;
+  padding: 4px 0;
+}
+
+.philWord::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--rose-gold), var(--gold-soft));
+  transition: width 0.4s var(--ease-float);
+}
+
+.philWord.glowing {
+  background: linear-gradient(135deg, var(--rose-gold), var(--gold-soft), var(--lavender-deep));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.philWord.glowing::after {
+  width: 100%;
+}
+
+.philDot {
+  color: rgba(200, 146, 122, 0.4);
+}
+
+.philOrb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(70px);
+}
+
+.philOrb1 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(216, 207, 232, 0.3)0%, transparent 70%);
+  top: 30%;
+  left: -10%;
+  animation: orbFloat 20s ease-in-out infinite;
+}
+
+.philOrb2 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(232, 213, 176, 0.25)0%, transparent 70%);
+  bottom: 15%;
+  right: -5%;
+  animation: orbFloat 16s ease-in-out infinite reverse;
+}
+
+/* ---- Personal ---- */
+.personalSection {
+  position: relative;
+  z-index: 1;
+  padding: var(--section-pad-v) var(--section-pad-h);
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(253, 244, 240, 1)0%, rgba(250, 243, 248, 0.95)50%, rgba(245, 238, 255, 0.9)100%);
+}
+
+.personalParallaxBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.parallaxLayer {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+}
+
+.parallaxLayer1 {
+  width: 700px;
+  height: 500px;
+  background: radial-gradient(ellipse, rgba(232, 207, 220, 0.35)0%, transparent 70%);
+  top: -100px;
+  right: -200px;
+}
+
+.parallaxLayer2 {
+  width: 500px;
+  height: 600px;
+  background: radial-gradient(ellipse, rgba(216, 207, 240, 0.3)0%, transparent 70%);
+  bottom: -100px;
+  left: -150px;
+}
+
+.parallaxLayer3 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(200, 146, 122, 0.15)0%, transparent 70%);
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.personalContent {
+  position: relative;
+  z-index: 1;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 60px 0;
+}
+
+.personalLabel {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--lavender-deep);
+  margin-bottom: 20px;
+}
+
+.personalHeading {
+  font-family: var(--font-serif);
+  font-size: clamp(44px, 6vw, 80px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 80px;
+}
+
+.personalHeading em {
+  font-style: italic;
+  background: linear-gradient(135deg, var(--lavender-deep), var(--rose-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.personalTextBlocks {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.personalPara {
+  font-size: 17px;
+  line-height: 1.85;
+  color: var(--text-secondary);
+  font-weight: 300;
+}
+
+.personalPara strong {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.personalPara em {
+  font-style: italic;
+  color: var(--rose-gold);
+}
+
+/* ---- Connect ---- */
+.connectSection {
+  position: relative;
+  z-index: 1;
+  padding: var(--section-pad-v) var(--section-pad-h);
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(245, 238, 255, 0.9)0%, rgba(250, 242, 248, 1)30%, rgba(253, 246, 242, 1)70%, rgba(253, 250, 248, 1)100%);
+  text-align: center;
+}
+
+.connectBg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 30% 50%, rgba(200, 146, 122, 0.1)0%, transparent 60%),
+    radial-gradient(ellipse 70% 50% at 70% 50%, rgba(176, 160, 204, 0.12)0%, transparent 60%);
+  pointer-events: none;
+}
+
+.connectContent {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.connectLabel {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--rose-gold);
+  margin-bottom: 16px;
+}
+
+.connectHeading {
+  font-family: var(--font-serif);
+  font-size: clamp(48px, 7vw, 90px);
+  font-weight: 400;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+}
+
+.connectHeading em {
+  font-style: italic;
+  background: linear-gradient(135deg, var(--rose-gold), var(--gold-soft));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.connectSub {
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--text-muted);
+  font-weight: 300;
+  margin-bottom: 56px;
+}
+
+.connectLinks {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 56px;
+}
+
+.connectLinkCard {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 28px;
+  border-radius: 18px;
+  background: rgba(253, 248, 242, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(200, 146, 122, 0.2);
+  box-shadow: 0 4px 24px rgba(180, 140, 110, 0.08);
+  transition: transform 0.3s var(--ease-spring), box-shadow 0.3s, border-color 0.3s;
+  min-width: 220px;
+  cursor: pointer;
+}
+
+.connectLinkCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(200, 146, 122, 0.2);
+  border-color: rgba(200, 146, 122, 0.4);
+}
+
+.connectLinkIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(200, 146, 122, 0.15), rgba(176, 160, 204, 0.15));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--rose-gold);
+  flex-shrink: 0;
+}
+
+.connectLinkText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: left;
+}
+
+.connectPlatform {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.connectHandle {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+.connectArrow {
+  margin-left: auto;
+  color: var(--text-muted);
+  font-size: 18px;
+  transition: transform 0.3s;
+}
+
+.connectLinkCard:hover .connectArrow {
+  transform: translate(3px, -3px);
+}
+
+.connectCtaWrap {
+  display: flex;
+  justify-content: center;
+}
+
+.btnConnectMain {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.btnText {
+  display: inline-block;
+  padding: 20px 52px;
+  border-radius: 100px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: #fff;
+  background: linear-gradient(135deg, #b07a6a, #c89a7a, #b090c0);
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s var(--ease-spring), letter-spacing 0.3s;
+  box-shadow: 0 8px 32px rgba(180, 120, 100, 0.35);
+}
+
+.btnConnectMain:hover .btnText {
+  transform: scale(1.04);
+  letter-spacing: 0.09em;
+}
+
+.btnPulseRing {
+  position: absolute;
+  inset: -8px;
+  border-radius: 100px;
+  border: 1px solid rgba(200, 146, 122, 0.4);
+  animation: pulsRing 2.5s ease-out infinite;
+}
+
+.btnGlowAura {
+  position: absolute;
+  inset: 0;
+  border-radius: 100px;
+  background: linear-gradient(135deg, rgba(200, 146, 122, 0.4), rgba(176, 160, 204, 0.4));
+  filter: blur(20px);
+  z-index: -1;
+  animation: glowAura 3s ease-in-out infinite;
+}
+
+/* ---- Footer ---- */
+.siteFooter {
+  position: relative;
+  z-index: 1;
+  padding: 80px 40px 60px;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(253, 250, 248, 1)0%, rgba(255, 252, 250, 1)100%);
+}
+
+.footerFade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(200, 146, 122, 0.2), transparent);
+}
+
+.footerContent {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.footerLogo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.footerLogoText {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 400;
+  background: linear-gradient(135deg, var(--rose-gold), var(--gold-soft), var(--lavender-deep));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.footerLogoSub {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.footerLinks {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.footerLinks a:hover {
+  color: var(--rose-gold);
+}
+
+.footerCopy {
+  font-size: 12px;
+  color: var(--text-muted);
+  opacity: 0.6;
+  letter-spacing: 0.04em;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+  .metricsLayout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .metricsImgWrap {
+    height: 480px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .metricsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .navLinks {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  :root {
+    --section-pad-v: 80px;
+    --section-pad-h: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .metricsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .heroCta {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btnGlass {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+
+  .connectLinks {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .connectLinkCard {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .ring1 {
+    width: 300px;
+    height: 300px;
+  }
+
+  .ring2 {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* ============================================================
+   IMAGE INTEGRATION STYLES
+   ============================================================ */
+
+/* ---- Hero Image (floating portrait, right) ---- */
+.heroImgWrap {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: clamp(400px, 50vw, 800px);
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  mask-image: linear-gradient(to right, transparent 0%, black 35%),
+    linear-gradient(to top, transparent 0%, black 15%);
+  mask-composite: intersect;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 35%),
+    linear-gradient(to top, transparent 0%, black 15%);
+  -webkit-mask-composite: source-in;
+}
+
+.heroImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 70% 30%;
+  /* Focuses slightly more on her instead of pure center */
+  border-radius: 0;
+  filter: saturate(0.95) contrast(1.05);
+}
+
+.heroImgGlow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right,
+      #f9ece0 0%,
+      transparent 30%);
+  pointer-events: none;
+}
+
+/* Position text on the left */
+.heroSection {
+  justify-content: flex-start;
+  padding-left: clamp(24px, 10vw, 160px);
+}
+
+.heroSection .heroContent {
+  margin-right: 0;
+  text-align: left;
+  max-width: 640px;
+  padding: 0;
+}
+
+.heroSection .heroCta {
+  justify-content: flex-start;
+}
+
+.heroSection .heroRoles {
+  justify-content: flex-start;
+}
+
+/* ---- Story Layout (two-column) ---- */
+.storyLayout {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 72px;
+  align-items: center;
+  max-width: 1100px;
+  width: 100%;
+}
+
+.storyImgWrap {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow:
+    0 24px 64px rgba(160, 120, 100, 0.18),
+    0 4px 16px rgba(200, 146, 122, 0.12);
+}
+
+.storyImg {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  filter: saturate(0.9) contrast(1.05);
+  transition: transform 0.6s var(--ease-float);
+}
+
+.storyImgWrap:hover .storyImg {
+  transform: scale(1.03);
+}
+
+.storyImgGlow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg,
+      rgba(200, 146, 122, 0.2) 0%,
+      transparent 50%,
+      rgba(176, 160, 204, 0.15) 100%);
+  pointer-events: none;
+}
+
+.storyImgTag {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(253, 248, 242, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(200, 146, 122, 0.3);
+  border-radius: 100px;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--rose-gold);
+}
+
+.metricsImgWrap {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow:
+    0 24px 64px rgba(160, 120, 100, 0.16),
+    0 4px 16px rgba(200, 146, 122, 0.1);
+}
+
+.metricsImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  flex: 1;
+  filter: saturate(0.88) contrast(1.04);
+  transition: transform 0.6s var(--ease-float);
+}
+
+.metricsImgWrap:hover .metricsImg {
+  transform: scale(1.03);
+}
+
+.metricsImgOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top,
+      rgba(30, 15, 40, 0.55) 0%,
+      rgba(30, 15, 40, 0.1) 40%,
+      transparent 70%);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.metricsImgCaption {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(253, 248, 242, 0.15);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 100px;
+  padding: 8px 20px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: rgba(253, 248, 242, 0.9);
+}
+
+
+/* ============================================================
+   RESPONSIVE — Image adjustments
+   ============================================================ */
+@media (max-width: 1100px) {
+  .musicImgWrap {
+    left: -20px;
+    width: clamp(160px, 22vw, 280px);
+  }
+
+  .musicContent {
+    padding-left: clamp(0px, 18vw, 200px);
+  }
+}
+
+@media (max-width: 900px) {
+
+  /* Hero: image behind centered text */
+  .heroImgWrap {
+    width: 65%;
+    right: 0;
+    opacity: 0.15 !important;
+  }
+
+  .heroSection {
+    padding-left: 24px;
+    padding-right: 24px;
+    justify-content: center;
+  }
+
+  .heroSection .heroContent {
+    margin-right: 0;
+    text-align: center;
+  }
+
+  .heroSection .heroCta {
+    justify-content: center;
+  }
+
+  .heroSection .heroRoles {
+    justify-content: center;
+  }
+
+  /* Story: stack vertically */
+  .storyLayout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .storyImgWrap {
+    order: -1;
+  }
+
+  .storyImg {
+    height: 360px;
+  }
+
+  /* Music: hide floating DJ photo on small screens */
+  .musicImgWrap {
+    display: none;
+  }
+
+  .musicContent {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .heroImgWrap {
+    display: none;
+  }
+
+  .metricsImgWrap {
+    max-width: 280px;
+  }
+
+  .metricsImg {
+    height: 340px;
+  }
+}

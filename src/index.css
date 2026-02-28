@@ -1,0 +1,196 @@
+/* ============================================================
+   RIA GUPTA — Anti-Gravity Personal Brand Website
+   Global Styles · Design Tokens · Utilities
+   ============================================================ */
+
+/* ---- Custom Properties ---- */
+:root {
+  --ivory: #fdf8f2;
+  --pearl: #f7f0e8;
+  --blush: #f5dfd6;
+  --rose-gold: #c8927a;
+  --rose-gold-light: #e8b4a0;
+  --champagne: #e8d5b0;
+  --champagne-warm: #d4b896;
+  --lavender-mist: #d8cfe8;
+  --lavender-deep: #b0a0cc;
+  --gold-soft: #c9a96e;
+  --gold-glow: #e2c47c;
+  --midnight: #1a1428;
+  --midnight-blue: #150f24;
+
+  --text-primary: #2a1f3d;
+  --text-secondary: #5a4e6e;
+  --text-muted: #9688a8;
+
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, sans-serif;
+
+  --section-pad-v: 120px;
+  --section-pad-h: 40px;
+  --max-width: 1100px;
+
+  --ease-float: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--ivory);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+::selection {
+  background: rgba(200, 146, 122, 0.25);
+  color: var(--text-primary);
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ivory);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--rose-gold), var(--lavender-deep));
+  border-radius: 3px;
+}
+
+/* ---- Shared Keyframes ---- */
+@keyframes orbFloat {
+
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  33% {
+    transform: translateY(-30px) scale(1.05);
+  }
+
+  66% {
+    transform: translateY(20px) scale(0.95);
+  }
+}
+
+@keyframes cardFloat {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  25% {
+    transform: translateY(-10px) rotate(0.8deg);
+  }
+
+  75% {
+    transform: translateY(6px) rotate(-0.6deg);
+  }
+}
+
+@keyframes badgePulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.5);
+    opacity: 0.6;
+  }
+}
+
+@keyframes buttonFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes scrollPulse {
+
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scaleY(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scaleY(1.1);
+  }
+}
+
+@keyframes ringRotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes pulsRing {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+@keyframes glowAura {
+
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
