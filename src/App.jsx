@@ -7,23 +7,36 @@ import Story from './components/Story'
 import Metrics from './components/Metrics'
 import Music from './components/Music'
 import Philosophy from './components/Philosophy'
+import './components/components.css'
 import Connect from './components/Connect'
 import Footer from './components/Footer'
+import Experience from './components/Experience'
+import Skills from './components/Skills'
+import Media from './components/Media'
+import Cursor from './components/Cursor'
+
+import { ReactLenis } from 'lenis/react'
 
 export default function App() {
   return (
-    <>
-      <ParticleCanvas />
-      <Navbar />
-      <main>
-        <Hero />
-        <Story />
-        <Metrics />
-        <Music />
-        <Philosophy />
-        <Connect />
-      </main>
-      <Footer />
-    </>
+    <ReactLenis root>
+      <>
+        <Cursor />
+        <ParticleCanvas />
+        <Navbar />
+        <main>
+          <Hero />
+          <Story />
+          <Metrics />
+          <Experience />
+          <Skills />
+          <Media />
+          <Music />
+          <Philosophy />
+          <Connect />
+        </main>
+        <Footer />
+      </>
+    </ReactLenis>
   )
 }

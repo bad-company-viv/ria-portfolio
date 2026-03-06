@@ -10,7 +10,7 @@ const CARDS = [
         number: '5', suffix: '+',
         title: 'Years of Study',
         sub: 'University of Waterloo',
-        desc: 'First Class Honors in Psychology. Mastered the subconscious mind — and how to rewire it.',
+        desc: 'First Class Honors in Psychology. Mastered the subconscious mind and how to rewire it.',
         delay: 6,
     },
     {
@@ -79,7 +79,7 @@ export default function Metrics() {
                 <div ref={imgRef} className="metricsImgWrap" style={{ opacity: 0 }}>
                     <img
                         src="/one.jpg"
-                        alt="Ria Gupta — University of Waterloo graduation"
+                        alt="Ria Gupta University of Waterloo graduation"
                         className="metricsImg"
                     />
                 </div>

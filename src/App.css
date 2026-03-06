@@ -1,3 +1,24 @@
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
 /* Navbar */
 .navbar {
   position: fixed;
@@ -618,6 +639,22 @@
 
 .metricCard:hover .cardInner {
   box-shadow: 0 30px 60px rgba(180, 140, 110, 0.2), 0 8px 24px rgba(200, 146, 122, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  transform: translateY(-8px) translateZ(20px);
+}
+
+.metricCard .cardSub,
+.metricCard .cardTitle,
+.metricCard .cardNumber,
+.metricCard .cardDesc {
+  transition: transform 0.4s var(--ease-float);
+  transform-style: preserve-3d;
+}
+
+.metricCard:hover .cardSub,
+.metricCard:hover .cardTitle,
+.metricCard:hover .cardNumber,
+.metricCard:hover .cardDesc {
+  transform: translateZ(40px);
 }
 
 .cardGlowBorder {
@@ -1567,14 +1604,16 @@
 /* ---- Responsive ---- */
 @media (max-width: 900px) {
   .metricsLayout {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
     gap: 40px;
   }
 
   .metricsImgWrap {
     height: 480px;
-    max-width: 500px;
+    max-width: 100%;
     margin: 0 auto;
+    order: -1;
+    /* Always put image above text on mobile */
   }
 
   .metricsGrid {
@@ -1611,6 +1650,17 @@
     justify-content: center;
   }
 
+  /* Reduce internal padding of the Glassmorphic cards heavily on mobile */
+  .cardInner {
+    padding: 32px 20px;
+  }
+
+  /* Compress the Marquee section margin so it doesn’t add too much white space */
+  .mediaMarquee div {
+    font-size: 20px !important;
+    padding: 0 20px !important;
+  }
+
   .connectLinks {
     flex-direction: column;
     align-items: center;
@@ -1619,6 +1669,23 @@
   .connectLinkCard {
     width: 100%;
     max-width: 320px;
+  }
+
+  /* Adjust fonts for metrics and headers */
+  .metricsHeading,
+  .storyHeading,
+  .personalHeading {
+    font-size: clamp(32px, 8vw, 44px);
+    margin-bottom: 32px;
+  }
+
+  /* Ensure timeline sections compress text on mobile */
+  .timelineRole {
+    font-size: 18px !important;
+  }
+
+  .timelineCompany {
+    font-size: 13px !important;
   }
 
   .ring1 {
@@ -1887,11 +1954,16 @@
     display: none;
   }
 
-  .metricsImgWrap {
-    max-width: 280px;
+  /* Make sure images span the screen on mobile, not capped at 280px */
+  .metricsImgWrap,
+  .storyImgWrap {
+    max-width: 100%;
+    margin-bottom: 24px;
   }
 
-  .metricsImg {
-    height: 340px;
+  .metricsImg,
+  .storyImg {
+    height: 380px;
+    border-radius: 16px;
   }
 }

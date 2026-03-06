@@ -32,7 +32,7 @@ export default function Hero() {
             <div className="ring ring1" />
             <div className="ring ring2" />
 
-            {/* Full-bleed portrait image — bottom-right floating */}
+            {/* Full bleed portrait image bottom right floating */}
             <div
                 ref={imgRef}
                 className="heroImgWrap"
@@ -40,7 +40,7 @@ export default function Hero() {
             >
                 <img
                     src="/two.jpg"
-                    alt="Ria Gupta — Toronto skyline"
+                    alt="Ria Gupta Toronto skyline"
                     className="heroImg"
                 />
                 <div className="heroImgGlow" />

@@ -88,7 +88,7 @@ export default function Music() {
             {/* Dark radial glows */}
             <div className="musicBgOverlay" />
 
-            {/* Waveform — full-width decorative strip */}
+            {/* Waveform full width decorative strip */}
             <div className="waveformStrip">
                 <canvas id="waveformCanvas" ref={waveRef} />
             </div>
@@ -118,7 +118,7 @@ export default function Music() {
                     </h2>
 
                     <p className="musicDesc">
-                        Manifestation music designed to rewire the subconscious effortlessly. Each beat carries an intention, each melody a frequency — crafted to align your energy with your deepest desires.
+                        Manifestation music designed to rewire the subconscious effortlessly. Each beat carries an intention, each melody a frequency crafted to align your energy with your deepest desires.
                     </p>
 
                     {/* Divider */}

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 
 /**
- * Floating particle canvas — fixed to the viewport.
+ * Floating particle canvas fixed to the viewport.
  * All particles drift upward slowly with random alpha / size.
  */
 export default function ParticleCanvas() {

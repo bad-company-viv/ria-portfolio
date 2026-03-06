@@ -13,6 +13,9 @@ export default function Navbar() {
     const links = [
         { href: '#story', label: 'Story' },
         { href: '#metrics', label: 'Impact' },
+        { href: '#experience', label: 'Journey' },
+        { href: '#skills', label: 'Skills' },
+        { href: '#media', label: 'Media' },
         { href: '#music', label: 'Music' },
         { href: '#philosophy', label: 'Philosophy' },
         { href: '#connect', label: 'Connect', cta: true },
