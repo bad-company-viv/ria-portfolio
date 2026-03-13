@@ -260,13 +260,14 @@ html.lenis body {
   backdrop-filter: blur(10px);
   border: 1px solid rgba(200, 146, 122, 0.25);
   border-radius: 100px;
-  padding: 8px 20px;
+  padding: 12px 28px;
+  margin-top: 40px;
+  margin-bottom: 32px;
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--rose-gold);
-  margin-bottom: 32px;
   opacity: 0;
 }
 
@@ -419,6 +420,24 @@ html.lenis body {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), transparent);
   pointer-events: none;
   border-radius: inherit;
+}
+
+/* Hero streaming links */
+.heroStreamingLinks {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btnStreaming {
+  background: linear-gradient(135deg, rgba(216, 207, 232, 0.25), rgba(176, 160, 204, 0.2));
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(176, 160, 204, 0.4) !important;
+  color: #3a2f55;
+  box-shadow: 0 8px 32px rgba(176, 160, 204, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  animation: buttonFloat 3s ease-in-out infinite;
+  animation-delay: -1.5s;
 }
 
 .scrollIndicator {
@@ -1113,6 +1132,110 @@ html.lenis body {
   }
 }
 
+/* Streaming platforms grid */
+.streamingGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 44px;
+}
+
+.streamingCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 32px;
+  border-radius: 16px;
+  border: 1px solid rgba(200, 146, 122, 0.2);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(8px);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.streamingCard:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(200, 146, 122, 0.4);
+  transform: translateX(4px);
+}
+
+.streamingCardLeft {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+}
+
+.streamingIconWrap {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
+}
+
+.streamingIcon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.streamingCardInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.streamingCardTitle {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fdf8f2;
+}
+
+.streamingCardSub {
+  font-size: 13px;
+  color: rgba(200, 190, 220, 0.65);
+}
+
+.streamingCardArrow {
+  font-size: 20px;
+  color: rgba(200, 146, 122, 0.6);
+  transition: transform 0.3s, color 0.3s;
+  flex-shrink: 0;
+}
+
+.streamingCard:hover .streamingCardArrow {
+  transform: translateX(6px);
+  color: rgba(200, 146, 122, 1);
+}
+
+@media (max-width: 800px) {
+  .streamingGrid {
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  .streamingCard {
+    padding: 16px 20px;
+  }
+
+  .streamingIconWrap {
+    width: 40px;
+    height: 40px;
+  }
+
+  .streamingCardTitle {
+    font-size: 13px;
+  }
+
+  .streamingCardSub {
+    font-size: 11px;
+  }
+}
+
 /* ---- Philosophy ---- */
 .philosophySection {
   position: relative;
@@ -1601,6 +1724,56 @@ html.lenis body {
   letter-spacing: 0.04em;
 }
 
+/* Site Credits */
+.siteCredits {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid rgba(200, 146, 122, 0.3);
+  border-radius: 8px;
+  padding: 8px 12px;
+  background: rgba(200, 146, 122, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.siteCredits:hover {
+  background: rgba(200, 146, 122, 0.12);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.creditLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 6px;
+  opacity: 0.85;
+  transition: all 0.3s ease;
+}
+
+.creditLink:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.creditLogo {
+  height: 16px;
+  width: auto;
+  object-fit: contain;
+}
+
+.creditDivider {
+  width: 1px;
+  height: 16px;
+  background: rgba(200, 146, 122, 0.3);
+  transition: background 0.3s ease;
+}
+
+.siteCredits:hover .creditDivider {
+  background: rgba(200, 146, 122, 0.5);
+}
+
 /* ---- Responsive ---- */
 @media (max-width: 900px) {
   .metricsLayout {
@@ -1754,7 +1927,7 @@ html.lenis body {
 }
 
 .heroSection .heroCta {
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .heroSection .heroRoles {
@@ -1965,5 +2138,245 @@ html.lenis body {
   .storyImg {
     height: 380px;
     border-radius: 16px;
+  }
+}
+
+  /* Hero section mobile */
+  .heroContent {
+    padding: 60px 20px 80px;
+  }
+
+  .heroBadge {
+    margin-top: 20px;
+    margin-bottom: 24px;
+    padding: 10px 20px;
+    font-size: 10px;
+  }
+
+  .heroName {
+    margin-bottom: 20px;
+  }
+
+  .nameRia {
+    font-size: clamp(36px, 8vw, 60px);
+  }
+
+  .nameGupta {
+    font-size: clamp(28px, 6vw, 48px);
+  }
+
+  .heroRoles {
+    font-size: 12px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .roleDivider {
+    display: none;
+  }
+
+  .heroRoles span {
+    display: block;
+  }
+
+  .heroTagline {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  .heroCta {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btnGlass {
+    width: auto;
+    max-width: 280px;
+    padding: 14px 24px;
+    font-size: 13px;
+  }
+
+  .heroStreamingLinks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .btnStreaming {
+    padding: 12px 16px;
+    font-size: 12px;
+  }
+
+  .btnIcon {
+    font-size: 14px;
+  }
+
+  /* Education section mobile */
+  .timelineCard {
+    padding-left: 50px;
+  }
+
+  .timelineCard::before {
+    left: 13px;
+    width: 14px;
+    height: 14px;
+  }
+
+  .timelineInner {
+    padding: 24px 20px !important;
+  }
+
+  .timelineRole {
+    font-size: 18px !important;
+  }
+
+  /* Music section mobile */
+  .musicHeading {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+
+  .musicDesc {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .musicStats {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .statNum {
+    font-size: 24px;
+  }
+
+  /* Connect section mobile */
+  .connectHeading {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  .connectSub {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .connectLinks {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .connectLinkCard {
+    padding: 16px 20px;
+  }
+
+  .connectLinkIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .connectPlatform {
+    font-size: 13px;
+  }
+
+  .connectHandle {
+    font-size: 11px;
+  }
+
+  .btnConnectMain {
+    width: 100%;
+    padding: 14px 24px;
+    font-size: 13px;
+  }
+
+  /* Streaming grid mobile */
+  .streamingGrid {
+    gap: 10px;
+  }
+
+  .streamingCard {
+    padding: 14px 16px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .streamingCardLeft {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .streamingCardTitle {
+    font-size: 12px;
+  }
+
+  .streamingCardSub {
+    font-size: 10px;
+  }
+
+  .streamingIconWrap {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Scroll indicator mobile */
+  .scrollIndicator {
+    bottom: 20px;
+    font-size: 11px;
+  }
+
+  .scrollLine {
+    height: 20px;
+  }
+}
+
+/* Extra small devices (320px and below) */
+@media (max-width: 380px) {
+  .heroContent {
+    padding: 40px 16px 60px;
+  }
+
+  .nameRia {
+    font-size: clamp(28px, 7vw, 40px);
+  }
+
+  .nameGupta {
+    font-size: clamp(20px, 5vw, 32px);
+  }
+
+  .heroRoles {
+    font-size: 11px;
+  }
+
+  .heroTagline {
+    font-size: 13px;
+  }
+
+  .btnGlass {
+    padding: 12px 20px;
+    font-size: 12px;
+  }
+
+  .heroStreamingLinks {
+    grid-template-columns: 1fr;
+  }
+
+  .connectHeading {
+    font-size: 24px;
+  }
+
+  .connectSub {
+    font-size: 13px;
+  }
+
+  .connectLinkCard {
+    padding: 14px 16px;
+  }
+
+  .streamingCard {
+    padding: 12px 14px;
   }
 }

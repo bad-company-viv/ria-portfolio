@@ -39,7 +39,7 @@ export default function Connect() {
                 </h2>
 
                 <p ref={subRef} className="connectSub">
-                    Whether you're ready to transform your life or just beginning to awaken — there's space for you here.
+                    Whether you're ready to transform your life or just beginning to awaken, there's space for you here.
                 </p>
 
                 <div ref={linksRef} className="connectLinks">
@@ -98,6 +98,24 @@ export default function Connect() {
                         <div className="connectLinkText">
                             <span className="connectPlatform">YouTube</span>
                             <span className="connectHandle">@manifestologywithria</span>
+                        </div>
+                        <span className="connectArrow">↗</span>
+                    </a>
+
+                    <a
+                        href="mailto:rriiaagupta@gmail.com"
+                        className="connectLinkCard"
+                        id="connectEmail"
+                    >
+                        <div className="connectLinkIcon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" width="24" height="24">
+                                <rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect>
+                                <path d="M2 6l10 7 10-7"></path>
+                            </svg>
+                        </div>
+                        <div className="connectLinkText">
+                            <span className="connectPlatform">Email</span>
+                            <span className="connectHandle">rriiaagupta@gmail.com</span>
                         </div>
                         <span className="connectArrow">↗</span>
                     </a>

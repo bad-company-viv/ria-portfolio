@@ -44,13 +44,13 @@ export default function Philosophy() {
 
                     <div className="personalTextBlocks">
                         <p ref={p1Ref} className="personalPara">
-                            With a double major in <strong>Psychology and Business</strong>, I merge the rigour of science with the wisdom of spirituality — creating a methodology that is both grounded and transcendent.
+                            With a double major in <strong>Psychology and Business</strong>, I merge the rigour of science with the wisdom of spirituality, creating a methodology that is both grounded and transcendent.
                         </p>
                         <p ref={p2Ref} className="personalPara">
-                            My mission: <em>empower women to unlock their inner power</em> and manifest with joy and ease — moving beyond old patterns into a life of effortless abundance.
+                            My mission: <em>empower women to unlock their inner power</em> and manifest with joy and ease, moving beyond old patterns into a life of effortless abundance.
                         </p>
                         <p ref={p3Ref} className="personalPara">
-                            When not guiding others, I explore the world, study personal development, create music, and embrace life fully — as living proof that the methods I teach truly work.
+                            When not guiding others, I explore the world, study personal development, create music, and embrace life fully as living proof that the methods I teach truly work.
                         </p>
                     </div>
                 </div>

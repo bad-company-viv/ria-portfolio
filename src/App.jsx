@@ -11,6 +11,7 @@ import './components/components.css'
 import Connect from './components/Connect'
 import Footer from './components/Footer'
 import Experience from './components/Experience'
+import Education from './components/Education'
 import Skills from './components/Skills'
 import Media from './components/Media'
 import Cursor from './components/Cursor'
@@ -29,6 +30,7 @@ export default function App() {
           <Story />
           <Metrics />
           <Experience />
+          <Education />
           <Skills />
           <Media />
           <Music />

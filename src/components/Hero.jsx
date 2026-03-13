@@ -7,6 +7,7 @@ export default function Hero() {
     const rolesRef = useRef(null)
     const taglineRef = useRef(null)
     const ctaRef = useRef(null)
+
     const scrollRef = useRef(null)
     const imgRef = useRef(null)
 
@@ -83,16 +84,52 @@ export default function Hero() {
                         <span>Work With Me</span>
                         <div className="btnGlowInner" />
                     </a>
-                    <a
-                        href="https://www.youtube.com/@manifestologywithria"
-                        target="_blank" rel="noopener noreferrer"
-                        className="btnGlass btnSecondary"
-                        id="btn-listen-youtube"
-                    >
-                        <span className="btnIcon">🎧</span>
-                        <span>Listen on YouTube</span>
-                        <div className="btnGlowInner" />
-                    </a>
+                    <div className="heroStreamingLinks">
+                        <a
+                            href="https://www.youtube.com/@manifestologywithria"
+                            target="_blank" rel="noopener noreferrer"
+                            className="btnGlass btnStreaming youtubeBtn"
+                            id="btn-watch-youtube"
+                            aria-label="Watch on YouTube"
+                        >
+                            <span className="btnIcon">▶</span>
+                            <span>YouTube</span>
+                            <div className="btnGlowInner" />
+                        </a>
+                        <a
+                            href="https://open.spotify.com/track/3fAkWgG4nSCIaRabq5SbPu?si=QOdjx4HYRrGWKET1Ydn5zA"
+                            target="_blank" rel="noopener noreferrer"
+                            className="btnGlass btnStreaming spotifyBtn"
+                            id="btn-listen-spotify"
+                            aria-label="Listen on Spotify"
+                        >
+                            <span className="btnIcon">🎵</span>
+                            <span>Spotify</span>
+                            <div className="btnGlowInner" />
+                        </a>
+                        <a
+                            href="https://music.apple.com/in/album/last-dance/1875443703?i=1875443704"
+                            target="_blank" rel="noopener noreferrer"
+                            className="btnGlass btnStreaming appleMusicBtn"
+                            id="btn-listen-apple"
+                            aria-label="Listen on Apple Music"
+                        >
+                            <span className="btnIcon">🎵</span>
+                            <span>Apple Music</span>
+                            <div className="btnGlowInner" />
+                        </a>
+                        <a
+                            href="https://linktr.ee/riiagupta"
+                            target="_blank" rel="noopener noreferrer"
+                            className="btnGlass btnStreaming linktreeBtn"
+                            id="btn-linktree"
+                            aria-label="All Links"
+                        >
+                            <span className="btnIcon">🔗</span>
+                            <span>All Links</span>
+                            <div className="btnGlowInner" />
+                        </a>
+                    </div>
                 </div>
             </div>
 
