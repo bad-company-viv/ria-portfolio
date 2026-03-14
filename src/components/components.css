@@ -127,3 +127,10 @@
   border: 1px solid rgba(253, 248, 242, 0.4);
   backdrop-filter: blur(4px);
 }
+
+/* Hide cursor on mobile */
+@media (max-width: 768px) {
+  .customCursor {
+    display: none;
+  }
+}

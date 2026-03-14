@@ -65,13 +65,13 @@ export default function Story() {
                             But your mind is being shaped all day anyway, by repetition. And music is one of the most repeated inputs in modern life. That is where <strong>WishTune</strong> began.
                         </p>
                         <p ref={p3Ref} className="storyPara">
-                            I am Ria Gupta, a Psychology graduate, DJ, and music producer. I built WishTune to blend real music with belief-focused audio design, so mindset work becomes something you actually stick to.
+                            I am Ria Gupta, a Psychology graduate, DJ, and music producer. I built WishTune to blend real music with belief focused audio design, so mindset work becomes something you actually stick to.
                         </p>
                         <p ref={p4Ref} className="storyPara">
                             It sounds like the music you already play. You just listen during your normal day.
                         </p>
                         <p ref={p5Ref} className="storyPara">
-                            Over time, the goal is simple. Better self-perception. Better emotional baseline. Better decisions. Better outcomes.
+                            Over time, the goal is simple. Better self perception. Better emotional baseline. Better decisions. Better outcomes.
                         </p>
                         <p ref={p6Ref} className="storyPara">
                             <strong>WishTune is music, redesigned for who you want to become.</strong>
