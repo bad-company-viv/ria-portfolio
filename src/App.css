@@ -1134,17 +1134,19 @@ html.lenis body {
 
 /* Streaming platforms grid */
 .streamingGrid {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   margin-bottom: 44px;
 }
 
 .streamingCard {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 24px 32px;
+  justify-content: center;
+  text-align: center;
+  padding: 24px 20px;
   border-radius: 16px;
   border: 1px solid rgba(200, 146, 122, 0.2);
   background: rgba(255, 255, 255, 0.03);
@@ -1161,8 +1163,9 @@ html.lenis body {
 
 .streamingCardLeft {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 12px;
   flex: 1;
 }
 
@@ -1179,7 +1182,7 @@ html.lenis body {
 
 .streamingIcon {
   width: 32px;
-  height: 32px;
+  height: 22px;
   object-fit: contain;
 }
 
@@ -1205,6 +1208,7 @@ html.lenis body {
   color: rgba(200, 146, 122, 0.6);
   transition: transform 0.3s, color 0.3s;
   flex-shrink: 0;
+  margin-top: 12px;
 }
 
 .streamingCard:hover .streamingCardArrow {
@@ -2296,6 +2300,7 @@ html.lenis body {
   /* Streaming grid mobile */
   .streamingGrid {
     gap: 10px;
+    grid-template-columns: 1fr;
   }
 
   .streamingCard {

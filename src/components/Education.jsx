@@ -7,6 +7,14 @@ gsap.registerPlugin(ScrollTrigger)
 const EDUCATION = [
     {
         id: 'edu1',
+        period: '',
+        degree: 'Masters in Psychology',
+        field: '',
+        institution: 'Columbia University',
+        desc: '',
+    },
+    {
+        id: 'edu2',
         period: 'May 2024',
         degree: 'Honours B.A.',
         field: 'Business & Psychology',

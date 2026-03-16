@@ -7,12 +7,6 @@ gsap.registerPlugin(ScrollTrigger)
 
 const MEDIA = [
     {
-        id: 'med1',
-        type: 'Speaker',
-        title: 'Sound, Emotion, and Readiness for Learning',
-        venue: 'TEDx New Delhi (2025 Scheduled)',
-    },
-    {
         id: 'med2',
         type: 'Speaker',
         title: 'Emotional Design & Habit Formation',
@@ -80,7 +74,7 @@ export default function Media() {
                 <div className="metricsLayout" style={{ gridTemplateColumns: '1fr 1.5fr', alignItems: 'center' }}>
                     <div ref={imgRef} className="metricsImgWrap" style={{ opacity: 0 }}>
                         <img
-                            src="/four.JPG"
+                            src="/ria.jpg"
                             alt="Speaking and PR"
                             className="metricsImg"
                         />

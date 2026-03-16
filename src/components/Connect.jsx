@@ -103,7 +103,7 @@ export default function Connect() {
                     </a>
 
                     <a
-                        href="mailto:rriiaagupta@gmail.com"
+                        href="mailto:notsorial@gmail.com"
                         className="connectLinkCard"
                         id="connectEmail"
                     >
@@ -115,7 +115,7 @@ export default function Connect() {
                         </div>
                         <div className="connectLinkText">
                             <span className="connectPlatform">Email</span>
-                            <span className="connectHandle">rriiaagupta@gmail.com</span>
+                            <span className="connectHandle">notsorial@gmail.com</span>
                         </div>
                         <span className="connectArrow">↗</span>
                     </a>
