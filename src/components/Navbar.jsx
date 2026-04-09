@@ -17,8 +17,7 @@ export default function Navbar() {
         { href: '#skills', label: 'Skills' },
         { href: '#media', label: 'Media' },
         { href: '#music', label: 'Music' },
-        { href: '#philosophy', label: 'Philosophy' },
-        { href: '#connect', label: 'Connect', cta: true },
+        { href: '#philosophy', label: 'Philosophy' }
     ]
 
     return (
@@ -29,7 +28,7 @@ export default function Navbar() {
                 <ul className="navLinks">
                     {links.map(l => (
                         <li key={l.href}>
-                            <a href={l.href} className={l.cta ? 'navCta' : ''}>{l.label}</a>
+                            <a href={l.href}>{l.label}</a>
                         </li>
                     ))}
                 </ul>

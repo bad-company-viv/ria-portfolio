@@ -10,7 +10,7 @@ export default function Connect() {
     const headRef = useRef(null)
     const subRef = useRef(null)
     const linksRef = useRef(null)
-    const ctaRef = useRef(null)
+
 
     useEffect(() => {
         const ctx = gsap.context(() => {
@@ -19,7 +19,6 @@ export default function Connect() {
                 { el: headRef.current, d: 0.1 },
                 { el: subRef.current, d: 0.2 },
                 { el: linksRef.current, d: 0.3 },
-                { el: ctaRef.current, d: 0.45 },
             ]
             items.forEach(({ el, d }) => {
                 gsap.set(el, { opacity: 0, y: 28 })
@@ -118,19 +117,6 @@ export default function Connect() {
                             <span className="connectHandle">notsorial@gmail.com</span>
                         </div>
                         <span className="connectArrow">↗</span>
-                    </a>
-                </div>
-
-                <div ref={ctaRef} className="connectCtaWrap">
-                    <a
-                        href="https://riagupta.com"
-                        target="_blank" rel="noopener noreferrer"
-                        className="btnConnectMain"
-                        id="btn-join-journey"
-                    >
-                        <span className="btnText">Join the Journey</span>
-                        <div className="btnPulseRing" />
-                        <div className="btnGlowAura" />
                     </a>
                 </div>
             </div>

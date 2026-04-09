@@ -79,11 +79,7 @@ export default function Hero() {
 
                 {/* CTA */}
                 <div ref={ctaRef} className="heroCta" style={{ opacity: 0 }}>
-                    <a href="#connect" className="btnGlass btnPrimary" id="btn-work-with-me">
-                        <span className="btnIcon">✨</span>
-                        <span>Work With Me</span>
-                        <div className="btnGlowInner" />
-                    </a>
+
                     <div className="heroStreamingLinks">
                         <a
                             href="https://www.youtube.com/@manifestologywithria"
